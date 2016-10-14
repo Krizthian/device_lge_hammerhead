@@ -45,6 +45,14 @@ ARM_CROSS_COMPILE ?= $(KERNEL_CROSS_COMPILE)
 
 TOUCH_BOOST_DEBUG := false
 
+ifeq ($(ARM_EABI_TOOLCHAIN),)
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
+KERNEL_TOOLCHAIN := $(ANDROID_TOOLCHAIN_2ND_ARCH)arm/$(TARGET_KERNEL_CROSS_COMPILE_PREFIX)$(TARGET_GCC_VERSION)/bin
+ARM_EABI_TOOLCHAIN := $(KERNEL_TOOLCHAIN)
+endif
+
+ARM_CROSS_COMPILE ?= $(KERNEL_CROSS_COMPILE)
+
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
 # Increase the size if shaders of size greater than 12KB are used.
