@@ -134,6 +134,7 @@ TARGET_RECOVERY_FSTAB = device/lge/hammerhead/fstab.hammerhead
 TARGET_RELEASETOOLS_EXTENSIONS := device/lge/hammerhead
 
 BOARD_SEPOLICY_DIRS += device/lge/hammerhead/sepolicy
+BOARD_SEPOLICY_M4DEFS += vensys=\(vendor\|system/vendor\)
 
 HAVE_ADRENO_SOURCE:= false
 
