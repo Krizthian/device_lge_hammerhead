@@ -32,23 +32,6 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.selinux=permissive androidboot.hardware=hammerhead user_debug=31 maxcpus=2 msm_watchdog_v2.enable=1
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
 
-ifeq ($(ARM_EABI_TOOLCHAIN),)
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
-#KERNEL_TOOLCHAIN := $(subst linux-androideabi,eabi,$(ANDROID_TOOLCHAIN))
-KERNEL_TOOLCHAIN := prebuilts/gcc/linux-x86/arm/arm-eabi-$(TARGET_GCC_VERSION)
-ifeq ($(wildcard $(KERNEL_TOOLCHAIN)),)
-KERNEL_TOOLCHAIN := $(subst $(TARGET_GCC_VERSION),4.8,$(KERNEL_TOOLCHAIN))
-endif
-ifeq ($(wildcard $(KERNEL_TOOLCHAIN)),)
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-none-eabi-
-KERNEL_TOOLCHAIN :=
-else
-ARM_EABI_TOOLCHAIN := $(KERNEL_TOOLCHAIN)
-endif
-endif
-
-ARM_CROSS_COMPILE ?= $(KERNEL_CROSS_COMPILE)
-
 TOUCH_BOOST_DEBUG := false
 
 # Shader cache config options
