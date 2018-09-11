@@ -258,6 +258,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
+# USB HAL service
+PRODUCT_PACKAGES += \
+	android.hardware.usb@1.0-service.basic
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck
