@@ -34,19 +34,6 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
 
 ifeq ($(ARM_EABI_TOOLCHAIN),)
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
-KERNEL_TOOLCHAIN := $(subst linux-androideabi,eabi,$(ANDROID_TOOLCHAIN))
-ifeq ($(wildcard $(KERNEL_TOOLCHAIN)),)
-KERNEL_TOOLCHAIN := $(subst $(TARGET_GCC_VERSION),4.8,$(KERNEL_TOOLCHAIN))
-endif
-ARM_EABI_TOOLCHAIN := $(KERNEL_TOOLCHAIN)
-endif
-
-ARM_CROSS_COMPILE ?= $(KERNEL_CROSS_COMPILE)
-
-TOUCH_BOOST_DEBUG := false
-
-ifeq ($(ARM_EABI_TOOLCHAIN),)
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
 #KERNEL_TOOLCHAIN := $(subst linux-androideabi,eabi,$(ANDROID_TOOLCHAIN))
 KERNEL_TOOLCHAIN := prebuilts/gcc/linux-x86/arm/arm-eabi-$(TARGET_GCC_VERSION)
 ifeq ($(wildcard $(KERNEL_TOOLCHAIN)),)
@@ -61,6 +48,8 @@ endif
 endif
 
 ARM_CROSS_COMPILE ?= $(KERNEL_CROSS_COMPILE)
+
+TOUCH_BOOST_DEBUG := false
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
