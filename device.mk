@@ -210,7 +210,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
-    power.hammerhead
+    power.msm8974
 
 
 # Thermal HAL
