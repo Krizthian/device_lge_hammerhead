@@ -22,5 +22,4 @@ LOCAL_SHARED_LIBRARIES := libcutils liblog
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := lge
 LOCAL_MODULE := bdAddrLoader
-LOCAL_VENDOR_MODULE := true
 include $(BUILD_EXECUTABLE)

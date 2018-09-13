@@ -24,7 +24,6 @@ LOCAL_C_INCLUDES += \
     frameworks/base/include/media \
 
 LOCAL_MODULE:= camera_test
-LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_TAGS:= tests
 
 LOCAL_CFLAGS += -Wall -fno-short-enums -O0

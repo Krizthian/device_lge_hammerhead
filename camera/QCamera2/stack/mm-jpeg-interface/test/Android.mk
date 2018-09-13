@@ -32,7 +32,6 @@ LOCAL_SRC_FILES += mm_jpeg_test.c
 
 LOCAL_MODULE           := mm-jpeg-interface-test
 LOCAL_SHARED_LIBRARIES := liblog libcutils libdl libmmjpeg_interface
-LOCAL_VENDOR_MODULE := true
 
 include $(BUILD_EXECUTABLE)
 

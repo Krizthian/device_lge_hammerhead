@@ -71,7 +71,6 @@ LOCAL_SHARED_LIBRARIES:= \
          liblog libcutils liblog libdl
 
 LOCAL_MODULE:= mm-qcamera-app
-LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_EXECUTABLE)
