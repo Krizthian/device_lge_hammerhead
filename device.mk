@@ -408,7 +408,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.always_send_plmn=true
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    rild.libpath=/vendor/lib/libril-qc-qmi-1.so
+    rild.libpath=/system/lib/libril-qc-qmi-1.so
 
 # Camera configuration
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
